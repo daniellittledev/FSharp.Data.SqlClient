@@ -32,7 +32,7 @@ This conforms to familiar [ADO.NET conventions](https://msdn.microsoft.com/en-us
 *)
 
 open System
-open System.Data.SqlClient
+open Microsoft.Data.SqlClient
 
 type CurrencyCode = 
     SqlEnumProvider<"SELECT Name, CurrencyCode FROM Sales.Currency", connectionString>
@@ -224,8 +224,8 @@ provided the connections are not open at the same time (which would result in mu
 
 <div class="well well-small" style="margin:0px 70px 0px 20px;">
 
-**TIP** The value of the [Enlist](https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqlconnectionstringbuilder.enlist.aspx) 
-key from [SqlConnection.ConnectionString](https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqlconnection.connectionstring.aspx) 
+**TIP** The value of the [Enlist](https://msdn.microsoft.com/en-us/library/Microsoft.Data.SqlClient.sqlconnectionstringbuilder.enlist.aspx) 
+key from [SqlConnection.ConnectionString](https://msdn.microsoft.com/en-us/library/Microsoft.Data.SqlClient.sqlconnection.connectionstring.aspx) 
 property determines the auto-enlistment behavior of connection instance.
 </p></div>
 

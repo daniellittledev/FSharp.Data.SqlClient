@@ -18,8 +18,8 @@
     
     <PackageReference Include="Microsoft.SqlServer.TransactSql.ScriptDom" Version="14.0.3811.1" />
     <PackageReference Include="Microsoft.SqlServer.Types" Version="12.0.5000" />
-    <PackageReference Include="System.Data.SqlClient" Version="4.5.1" Condition="'$(TargetFramework)' == 'net461'" />
-    <PackageReference Include="System.Data.SqlClient" Version="4.5.1" Condition="'$(TargetFramework)' == 'netstandard'" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="4.5.1" Condition="'$(TargetFramework)' == 'net461'" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="4.5.1" Condition="'$(TargetFramework)' == 'netstandard'" />
     
     -->
   </ItemGroup>

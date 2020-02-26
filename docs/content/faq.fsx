@@ -106,7 +106,7 @@ With a datareader obtained from a custom command you can still reuse the typed r
 let getDatesQuery = "SELECT GETDATE() AS Now, GETUTCDATE() AS UtcNow"
 type GetDates = SqlCommandProvider<getDatesQuery,  connectionString>
 
-open System.Data.SqlClient
+open Microsoft.Data.SqlClient
 type SqlDataReader with
     member this.ToRecords<'T>() = 
         seq {
@@ -123,7 +123,7 @@ type SqlDataReader with
 let xs = 
     use conn = new SqlConnection(connectionString)
     conn.Open()
-    let cmd = new System.Data.SqlClient.SqlCommand(getDatesQuery, conn)
+    let cmd = new Microsoft.Data.SqlClient.SqlCommand(getDatesQuery, conn)
     cmd.ExecuteReader().ToRecords<GetDates.Record>() 
     |> Seq.toArray
 

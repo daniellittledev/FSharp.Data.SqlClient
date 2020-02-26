@@ -3,7 +3,7 @@ namespace FSharp.Data
 open System
 open System.Data
 open System.Collections.Generic
-open System.Data.SqlClient
+open Microsoft.Data.SqlClient
 
 ///<summary>Enum describing output type</summary>
 type ResultType =

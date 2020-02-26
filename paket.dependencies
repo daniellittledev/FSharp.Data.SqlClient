@@ -25,7 +25,7 @@ group DesignTime
 	
 	nuget System.Configuration.ConfigurationManager
 	nuget System.Data.Common
-	nuget System.Data.SqlClient
+	nuget Microsoft.Data.SqlClient
 	nuget System.Runtime.Caching
 	nuget FSharp.Core
 	nuget Microsoft.SqlServer.TransactSql.ScriptDom
@@ -36,7 +36,7 @@ group Test
 	framework: net461, netcoreapp2.0	
 
 	nuget FSharp.Core = 4.5.2
-	nuget System.Data.SqlClient
+	nuget Microsoft.Data.SqlClient
 	nuget System.Configuration.ConfigurationManager
 	
 	nuget Microsoft.SqlServer.Types ~> 12
@@ -56,7 +56,7 @@ group TestProjects
 
 	nuget FSharp.Core = 4.3.4
 
-	nuget System.Data.SqlClient
+	nuget Microsoft.Data.SqlClient
 	nuget System.Configuration.ConfigurationManager
 
 group Samples

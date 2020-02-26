@@ -105,7 +105,7 @@ Target.create "Build" (fun _ ->
 #r "System.IO.Compression"
 #r "System.IO.Compression.FileSystem"
 
-open System.Data.SqlClient
+open Microsoft.Data.SqlClient
 open System.Configuration
 open System.IO.Compression
 

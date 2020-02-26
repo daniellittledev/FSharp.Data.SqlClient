@@ -6,5 +6,4 @@ System.Data.SqlClient
 System.Runtime.Caching
 Microsoft.SqlServer.TransactSql.ScriptDom
 Microsoft.SqlServer.Types
-
-
+Microsoft.Data.SqlClient

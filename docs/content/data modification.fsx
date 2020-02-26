@@ -276,7 +276,7 @@ do
 
     currencyRates.Rows.Add newRow
     //Insert many more rows here
-    currencyRates.BulkCopy(copyOptions = System.Data.SqlClient.SqlBulkCopyOptions.TableLock)
+    currencyRates.BulkCopy(copyOptions = Microsoft.Data.SqlClient.SqlBulkCopyOptions.TableLock)
 
 (**
 
@@ -285,13 +285,13 @@ Custom update/bulk copy logic
 Both `Update` and `BulkCopy` operations can be configured via parameters, i.e. connection, transaction, batchSize, etc.
 That said, default update logic provided by typed DataTable can be insufficient for some advanced scenarios. 
 You don't need to give up on convenience of static typing, however. You can also 
-customize update behavior by creating your own instance of [SqlDataAdapter](https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqldataadapter.aspx) 
-(or [SqlBulkCopy](https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqlbulkcopy.aspx)) and configuring it to your needs. 
+customize update behavior by creating your own instance of [SqlDataAdapter](https://msdn.microsoft.com/en-us/library/Microsoft.Data.SqlClient.sqldataadapter.aspx) 
+(or [SqlBulkCopy](https://msdn.microsoft.com/en-us/library/Microsoft.Data.SqlClient.sqlbulkcopy.aspx)) and configuring it to your needs. 
 
 Pseudocode for custom data adapter:
 *)
 
-open System.Data.SqlClient
+open Microsoft.Data.SqlClient
 
 do
     let currencyRates = new AdventureWorks.Sales.Tables.CurrencyRate()
