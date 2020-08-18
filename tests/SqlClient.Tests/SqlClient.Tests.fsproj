@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-  <Import Project="..\..\fsc.props" />
+  <!--<Import Project="..\..\fsc.props" />-->
   <Import Project="..\..\netfx.props" />
   <PropertyGroup>
-    <TargetFrameworks>net461;netcoreapp2.0</TargetFrameworks>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <!--<TargetFrameworks>net461;netcoreapp2.0</TargetFrameworks>-->
     <AssemblyName>SqlClient.Tests</AssemblyName>
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -47,7 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Data.SqlClient">
-      <HintPath>..\..\bin\netstandard2.0\FSharp.Data.SqlClient.dll</HintPath>
+      <HintPath>..\..\bin\netcoreapp2.0\FSharp.Data.SqlClient.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Target Name="CopyCustomContent" AfterTargets="AfterBuild">

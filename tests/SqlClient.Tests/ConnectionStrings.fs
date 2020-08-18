@@ -4,7 +4,7 @@
 let server = @"."
 
 [<Literal>]
-let AdventureWorksLiteral = @"Data Source=" + server + ";Initial Catalog=AdventureWorks2012;Integrated Security=True"
+let AdventureWorksLiteral = @"Data Source=mhknbn2kdz.database.windows.net;Initial Catalog=AdventureWorks2012;User ID=sqlfamily;Pwd=sqlf@m1ly"//@"Data Source=" + server + ";Initial Catalog=AdventureWorks2012;Integrated Security=True"
 [<Literal>]
 let AdventureWorksDesignOnly = @"name=AdventureWorksDesignOnly"
 [<Literal>]

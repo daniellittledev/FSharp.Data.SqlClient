@@ -2,7 +2,7 @@ module FSharp.Data.TypeProviderTest
 
 open System
 open System.Data
-open System.Data.SqlClient
+open Microsoft.Data.SqlClient
 open Xunit
 
 type GetEvenNumbers = SqlCommandProvider<"select * from (values (2), (4), (8), (24)) as T(value)", ConnectionStrings.AdventureWorksNamed>
@@ -14,7 +14,7 @@ let asyncSinlgeColumn() =
 
 [<Fact>]
 let emptyResultset() = 
-    use cmd = new SqlCommandProvider<"SELECT 42 WHERE 0 > 1", ConnectionStrings.AdventureWorksNamed>()
+    use cmd = new SqlCommandProvider<"SELECT 42 WHERE 0 > 2", ConnectionStrings.AdventureWorksNamed>()
     Assert.Equal<_ []>( Array.empty, cmd.Execute() |> Seq.toArray)    
 
 [<Fact>]
@@ -101,7 +101,7 @@ let ToTraceString() =
 let runString query = 
     use conn = new SqlConnection(ConnectionStrings.AdventureWorks)
     conn.Open()
-    use cmd = new System.Data.SqlClient.SqlCommand()
+    use cmd = new Microsoft.Data.SqlClient.SqlCommand()
     cmd.Connection <- conn  
     cmd.CommandText <- query
     cmd.ExecuteNonQuery()

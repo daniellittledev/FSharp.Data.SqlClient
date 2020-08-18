@@ -99,7 +99,12 @@ type SqlCommandProvider(config : TypeProviderConfig) as this =
         AppDomain.CurrentDomain.SetData("DataDirectory", dataDirectoryFullPath)
 
         let conn = new SqlConnection(designTimeConnectionString.Value)
-        use closeConn = conn.UseLocally()
+        use closeConn = 
+            try
+                conn.OpenWithCloseOnDispose()
+            with
+                _ -> failwith "Could not open a connection to the database"
+
         conn.CheckVersion()
         conn.LoadDataTypesMap()
 

@@ -4,7 +4,7 @@ open System
 open System.Reflection
 open System.Data
 open Microsoft.Data.SqlClient
-open Microsoft.SqlServer.Server
+open Microsoft.Data.SqlClient.Server
 open System.Collections.Generic
 open System.Diagnostics
 open Microsoft.FSharp.Quotations
@@ -572,10 +572,8 @@ type DesignTime private() =
 
         rowType.AddMember ctor
         rowType.AddXmlDoc "User-Defined Table Type"
-                            
         rowType
 
-                
     static member internal GetExecuteArgs(cmdProvidedType: ProvidedTypeDefinition, sqlParameters: Parameter list, udttsPerSchema: Dictionary<_, ProvidedTypeDefinition>, ?unitsOfMeasurePerSchema) = 
         [
             for p in sqlParameters do
@@ -593,7 +591,7 @@ type DesignTime private() =
                             if p.Direction.HasFlag(ParameterDirection.Output)
                             then
                                 ProvidedParameter(parameterName, parameterType = p.TypeInfo.ClrType.MakeByRefType(), isOut = true)
-                            else                                 
+                            else
                                 ProvidedParameter(parameterName, parameterType = p.GetProvidedType(?unitsOfMeasurePerSchema = unitsOfMeasurePerSchema), ?optionalValue = p.DefaultValue)
                     else
                         assert(p.Direction = ParameterDirection.Input)

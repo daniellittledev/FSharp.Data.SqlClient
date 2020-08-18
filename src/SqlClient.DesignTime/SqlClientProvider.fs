@@ -77,6 +77,7 @@ type SqlProgrammabilityProvider(config : TypeProviderConfig) as this =
         AppDomain.CurrentDomain.SetData("DataDirectory", dataDirectoryFullPath)
 
         let conn = new SqlConnection(designTimeConnectionString.Value)
+        failwith "Whaa"
         use closeConn = conn.UseLocally()
         conn.CheckVersion()
         conn.LoadDataTypesMap()

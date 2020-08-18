@@ -1,4 +1,5 @@
 group TestProjects
     FSharp.Core
-    System.Data.SqlClient
-    System.Configuration.ConfigurationManager
+    #System.Data.SqlClient
+    #System.Configuration.ConfigurationManager
+    Microsoft.Data.SqlClient

@@ -1,0 +1,16 @@
+version: '3'
+services:
+
+    fsharpdata-sql:
+        image: nuitsjp/adventureworks:latest
+        #image: microsoft/mssql-server-linux:2017-latest
+        environment:
+            - SA_PASSWORD=M=qX7kYsg#Z@Ag3mX-tm
+            - ACCEPT_EULA=Y
+            - MSSQL_AGENT_ENABLED=true       
+        ports:
+            - "1434:1433"
+   #     volumes:
+   #         - C:\\data:/sqldb
+
+#Server=tcp:localhost,1434;Initial Catalog=AdventureWorks;User ID=sa;Password=P@ssw0rd!

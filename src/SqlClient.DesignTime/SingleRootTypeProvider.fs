@@ -19,7 +19,7 @@ type SingleRootTypeProvider(config: TypeProviderConfig, providerName, parameters
         let providerType = ProvidedTypeDefinition(assembly, nameSpace, providerName, Some typeof<obj>, hideObjectMethods = true, isErased = isErased)
 
         providerType.DefineStaticParameters(
-            parameters = parameters,             
+            parameters = parameters,
             instantiationFunction = fun typeName args ->
                 match cache.TryGetValue(typeName) with
                 | true, cachedType -> cachedType.Value
@@ -28,7 +28,7 @@ type SingleRootTypeProvider(config: TypeProviderConfig, providerName, parameters
                     monitors
                     |> Seq.iter(fun m ->
                         match m with
-                        | :? System.Runtime.Caching.ChangeMonitor as monitor ->
+                        | :? ChangeMonitor as monitor ->
                             monitor.NotifyOnChanged(fun _ -> 
                                 cache.Remove(typeName)
                                 this.Invalidate()

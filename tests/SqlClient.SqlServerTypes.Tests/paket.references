@@ -1,8 +1,9 @@
 ﻿group Test
 	FSharp.Core
-	System.Data.SqlClient
-	System.Configuration.ConfigurationManager
-    Microsoft.SqlServer.Types redirects: force
+	#System.Data.SqlClient
+	#System.Configuration.ConfigurationManager
+    #Microsoft.SqlServer.Types redirects: force
+    Microsoft.Data.SqlClient
 	Newtonsoft.Json
 	xunit
 	xunit.runner.visualstudio
